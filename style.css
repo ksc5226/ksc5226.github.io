@@ -9,15 +9,15 @@ body {
   overflow: hidden;
 }
 
-/* Fullscreen fireworks */
+/* Fullscreen fireworks - TOP layer */
 #fireworks {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 1;
+  z-index: 9999;
 }
 
-/* Card stays above fireworks */
+/* Card stays below fireworks */
 .card {
   background: white;
   padding: 40px;
@@ -26,7 +26,7 @@ body {
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .avatar {

@@ -27,17 +27,18 @@ noBtn.addEventListener("mouseenter", () => {
 let particles = [];
 
 function createFirework(x, y) {
-  const count = 40;
+  const count = 120; // 🔥 MUCH MORE
   for (let i = 0; i < count; i++) {
-    const angle = (Math.PI * 2 * i) / count;
-    const speed = Math.random() * 5 + 2;
+    const angle = Math.random() * Math.PI * 2;
+    const speed = Math.random() * 7 + 3;
     particles.push({
       x,
       y,
       vx: Math.cos(angle) * speed,
       vy: Math.sin(angle) * speed,
-      life: 80,
+      life: 100,
       hue: Math.random() * 360,
+      size: Math.random() * 3 + 2,
     });
   }
 }
@@ -48,12 +49,12 @@ function animateFireworks() {
   particles.forEach((p, i) => {
     p.x += p.vx;
     p.y += p.vy;
-    p.vy += 0.04;
+    p.vy += 0.05;
     p.life--;
 
-    ctx.fillStyle = `hsl(${p.hue}, 100%, 60%)`;
+    ctx.fillStyle = `hsla(${p.hue}, 100%, 60%, ${p.life / 100})`;
     ctx.beginPath();
-    ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
     ctx.fill();
 
     if (p.life <= 0) particles.splice(i, 1);
@@ -70,10 +71,11 @@ yesBtn.addEventListener("click", () => {
   yay.classList.remove("hidden");
   img.classList.remove("hidden");
 
-  for (let i = 0; i < 8; i++) {
+  // 🔥 Burst MANY fireworks across screen
+  for (let i = 0; i < 15; i++) {
     createFirework(
       Math.random() * canvas.width,
-      Math.random() * canvas.height * 0.6
+      Math.random() * canvas.height
     );
   }
 });
