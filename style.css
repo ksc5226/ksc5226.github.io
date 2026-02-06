@@ -12,7 +12,7 @@ body {
   background: white;
   padding: 40px;
   border-radius: 20px;
-  width: 350px;
+  width: 360px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
@@ -23,7 +23,7 @@ body {
 }
 
 h2 {
-  margin: 15px 0 30px;
+  margin: 15px 0 20px;
 }
 
 .buttons {
@@ -55,4 +55,20 @@ button {
 
 #no {
   background: #eee;
+}
+
+.hint {
+  margin-top: 20px;
+  font-size: 13px;
+  color: gray;
+}
+
+.hidden {
+  display: none;
+}
+
+#result img {
+  width: 200px;
+  margin-top: 10px;
+  border-radius: 12px;
 }
