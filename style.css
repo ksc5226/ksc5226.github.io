@@ -6,8 +6,18 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Arial Rounded MT Bold", sans-serif;
+  overflow: hidden;
 }
 
+/* Fullscreen fireworks */
+#fireworks {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Card stays above fireworks */
 .card {
   background: white;
   padding: 40px;
@@ -16,7 +26,7 @@ body {
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   position: relative;
-  overflow: hidden;
+  z-index: 2;
 }
 
 .avatar {
@@ -48,13 +58,11 @@ button {
   font-size: 16px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  position: relative;
 }
 
 #yes {
   background: #ff4d7e;
   color: white;
-  z-index: 2;
 }
 
 #yes:hover {
@@ -80,10 +88,4 @@ button {
   margin-top: 20px;
   font-size: 13px;
   color: gray;
-}
-
-#fireworks {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
 }

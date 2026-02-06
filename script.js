@@ -4,12 +4,14 @@ const buttons = document.getElementById("buttons");
 const yay = document.getElementById("yay");
 const img = document.getElementById("celebrateImg");
 const hint = document.getElementById("hint");
+
 const canvas = document.getElementById("fireworks");
 const ctx = canvas.getContext("2d");
 
+/* ---------- Resize ---------- */
 function resizeCanvas() {
-  canvas.width = canvas.offsetWidth;
-  canvas.height = canvas.offsetHeight;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 }
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
@@ -25,29 +27,31 @@ noBtn.addEventListener("mouseenter", () => {
 let particles = [];
 
 function createFirework(x, y) {
-  const count = 30;
+  const count = 40;
   for (let i = 0; i < count; i++) {
     const angle = (Math.PI * 2 * i) / count;
-    const speed = Math.random() * 4 + 2;
+    const speed = Math.random() * 5 + 2;
     particles.push({
       x,
       y,
       vx: Math.cos(angle) * speed,
       vy: Math.sin(angle) * speed,
-      life: 60,
+      life: 80,
+      hue: Math.random() * 360,
     });
   }
 }
 
 function animateFireworks() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+
   particles.forEach((p, i) => {
     p.x += p.vx;
     p.y += p.vy;
-    p.vy += 0.05;
+    p.vy += 0.04;
     p.life--;
 
-    ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 60%)`;
+    ctx.fillStyle = `hsl(${p.hue}, 100%, 60%)`;
     ctx.beginPath();
     ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
     ctx.fill();
@@ -66,11 +70,10 @@ yesBtn.addEventListener("click", () => {
   yay.classList.remove("hidden");
   img.classList.remove("hidden");
 
-  const rect = canvas.getBoundingClientRect();
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 8; i++) {
     createFirework(
-      Math.random() * rect.width,
-      Math.random() * rect.height * 0.5
+      Math.random() * canvas.width,
+      Math.random() * canvas.height * 0.6
     );
   }
 });
