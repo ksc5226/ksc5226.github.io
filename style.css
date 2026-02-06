@@ -38,11 +38,17 @@ button {
   border-radius: 20px;
   font-size: 16px;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 #yes {
   background: #ff4d7e;
   color: white;
+}
+
+#yes:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 15px rgba(255, 77, 126, 0.4);
 }
 
 #no {
