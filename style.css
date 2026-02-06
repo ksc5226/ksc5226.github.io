@@ -23,7 +23,13 @@ body {
 }
 
 h2 {
-  margin: 15px 0 20px;
+  margin: 15px 0 10px;
+}
+
+#yay {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
 .buttons {
@@ -57,18 +63,18 @@ button {
   background: #eee;
 }
 
-.hint {
-  margin-top: 20px;
-  font-size: 13px;
-  color: gray;
-}
-
 .hidden {
   display: none;
 }
 
-#result img {
-  width: 200px;
+#celebrateImg {
+  width: 220px;
   margin-top: 10px;
   border-radius: 12px;
+}
+
+.hint {
+  margin-top: 20px;
+  font-size: 13px;
+  color: gray;
 }

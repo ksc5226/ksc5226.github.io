@@ -1,7 +1,8 @@
 const noBtn = document.getElementById("no");
 const yesBtn = document.getElementById("yes");
 const buttons = document.getElementById("buttons");
-const result = document.getElementById("result");
+const yay = document.getElementById("yay");
+const img = document.getElementById("celebrateImg");
 
 noBtn.addEventListener("mouseenter", () => {
   const x = Math.random() * 260 - 130;
@@ -11,5 +12,6 @@ noBtn.addEventListener("mouseenter", () => {
 
 yesBtn.addEventListener("click", () => {
   buttons.style.display = "none";
-  result.classList.remove("hidden");
+  yay.classList.remove("hidden");
+  img.classList.remove("hidden");
 });
