@@ -12,9 +12,11 @@ body {
   background: white;
   padding: 40px;
   border-radius: 20px;
-  width: 360px;
+  width: 420px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
 }
 
 .avatar {
@@ -23,7 +25,8 @@ body {
 }
 
 h2 {
-  margin: 15px 0 10px;
+  margin: 15px 0 12px;
+  white-space: nowrap;
 }
 
 #yay {
@@ -77,4 +80,10 @@ button {
   margin-top: 20px;
   font-size: 13px;
   color: gray;
+}
+
+#fireworks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
