@@ -3,6 +3,7 @@ const yesBtn = document.getElementById("yes");
 const buttons = document.getElementById("buttons");
 const yay = document.getElementById("yay");
 const img = document.getElementById("celebrateImg");
+const hint = document.getElementById("hint");
 
 noBtn.addEventListener("mouseenter", () => {
   const x = Math.random() * 260 - 130;
@@ -12,6 +13,7 @@ noBtn.addEventListener("mouseenter", () => {
 
 yesBtn.addEventListener("click", () => {
   buttons.style.display = "none";
+  hint.style.display = "none";
   yay.classList.remove("hidden");
   img.classList.remove("hidden");
 });
